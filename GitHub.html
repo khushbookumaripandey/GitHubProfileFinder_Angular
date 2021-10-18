@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Finder</title>
+    <script src="/Users/khushbookumari/project/bower_components/angular/angular.js"></script>
+    <script src="GitHubProfile.js"></script>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <div class="container">
+        <div class="navbar">
+            <span class="search_items">
+                <input id="searchbar" type="text" placeholder="Search Github Username..." ng-model="Login" ng-keypress="searchProfile()" ng-change="searchProfile()" />
+                <span>
+                    <img class="searchbtn" src="/Users/khushbookumari/Desktop/GitHubProfileFinder-Angular/search.svg" alt="SEARCH" ng-click="searchProfile()" />
+                </span>
+            </span>
+        </div>
+        <div class="outer">
+            <div class="column1" >
+                <div class="column1row1">
+                    <img class="image"  src="{{Avatar}}">
+                </div>
+                <div class="column1row2">
+                    <div><u>
+                            <h3 style="color:black">Followers:</h3>
+                        </u>
+                        <h2><b>{{ Followers }}</b></h2>
+                    </div>
+                    <div><u>
+                            <h3 style="color:black">Following:</h3>
+                        </u>
+                        <h2><b>{{ Following }}</b></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="column2" >
+                <div class="row1" >
+                    User Login:
+                    <div class="ans">{{Login}}</div>
+                </div>
+                <div class="row2">
+                    <span>
+                        Number of Public Repository:
+                        <div class="ans">{{Public_Gists}}</div>
+                    </span>
+                    <span>
+                        Number Of Public Gists:
+                        <div class="ans">{{Id}}</div>
+                    </span>
+                </div>
+                <div class="row3" >
+                    UserId:
+                    <div class="ans">
+                        {{Id}}</div>
+                </div>
+                <div class="row4" >
+                    User Name:
+                    <div class="ans">{{Name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
